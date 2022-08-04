@@ -1,0 +1,14 @@
+export default function dropDownMenu() {}
+
+const dropDownMenus = document.querySelectorAll("[data-dropdown]");
+
+dropDownMenus.forEach((menu) => {
+  ["touchstart", "click"].forEach((userEvent) => {
+    menu.addEventListener(userEvent, handleClick);
+  });
+});
+
+function handleClick(event) {
+  event.preventDefault();
+  this.classList.toglle("active");
+}
